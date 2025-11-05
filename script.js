@@ -46,6 +46,27 @@ document.addEventListener('DOMContentLoaded', () => {
     sr.reveal('footer', { origin: 'bottom', distance: '20px', delay: 100 });
 });
 
+// ... (Giữ nguyên phần ScrollReveal) ...
+
+// Hàm xử lý việc hiển thị ảnh trong Modal
+function showImage(src, caption) {
+    const modalImage = document.getElementById('modalImage');
+    const modalCaption = document.getElementById('modalCaption');
+
+    if (modalImage && modalCaption) {
+        modalImage.src = src;
+        modalCaption.textContent = caption;
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Khởi tạo ScrollReveal
+    const sr = ScrollReveal({
+        // ... (Thông số ScrollReveal giữ nguyên) ...
+    });
+
+    // ... (Các lệnh sr.reveal giữ nguyên) ...
+});
 // Fix: Override Animate.css initial hidden state when ScrollReveal is active
 // The Animate.css classes were added to the HTML for fallback, but ScrollReveal will handle visibility.
 // For elements where you only want Animate.css, remove the `visibility: hidden;` from style.css.

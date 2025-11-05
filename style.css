@@ -8,13 +8,15 @@ body {
 }
 
 :root {
-  --color-primary: #9D4EDD; /* Tím Neon sáng */
+ --color-primary: #9D4EDD; /* Tím Neon sáng */
     --color-secondary: #1E90FF; /* Xanh Royal Blue */
     --color-dark: #1F1F1F;
     --color-text: #f8f9fa;
-    --color-bright-nav: #FFFFFF; /* Màu nền Menu Tươi Sáng */
-    --color-nav-text-dark: #191970; /* Màu chữ Menu Tối (Xanh đậm) */
+    --color-bright-nav: #FFFFFF;
+    --color-nav-text-dark: #191970;
 }
+
+
 
 /* --- Color Scheme (Purple-Blue - "Tím Xanh") --- */
 .custom-bg-header {
@@ -146,8 +148,21 @@ body {
     animation: pulse 2s infinite ease-in-out;
 }
 
+/* Tinh chỉnh Album ảnh */
+.hover-scale {
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+.hover-scale:hover {
+    transform: scale(1.05); /* Tăng scale lên 1.05 */
+    box-shadow: 0 0 30px var(--color-secondary); /* Highlight Xanh mạnh hơn */
+}
+
+/* Footer Links */
 .hover-underline:hover {
-    text-decoration: underline !important;
+    color: var(--color-primary) !important;
+    text-shadow: 0 0 5px var(--color-primary);
 }
 
 .timeline-list {
@@ -234,4 +249,31 @@ body {
 
 .navbar-toggler{
     background: #4a0080;
+}
+
+/* --- Tinh chỉnh Modal Zoom --- */
+.custom-bg-dark-modal {
+    background-color: #1F1F1F !important; /* Nền tối cho Modal */
+    border: 1px solid var(--color-primary);
+    box-shadow: 0 0 30px rgba(157, 78, 221, 0.4);
+}
+
+.modal-body img {
+    /* Hiệu ứng zoom in nhẹ khi modal mở */
+    animation: fadeInScale 0.5s ease-out;
+}
+
+.btn-close-white {
+    filter: invert(100%); /* Nút X màu trắng trên nền tối */
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
