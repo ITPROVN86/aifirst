@@ -1,0 +1,237 @@
+/* Custom Fonts (Optional: Use Google Fonts for better look) */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #e9ecef; /* Light gray background */
+    overflow-x: hidden;
+}
+
+:root {
+  --color-primary: #9D4EDD; /* Tím Neon sáng */
+    --color-secondary: #1E90FF; /* Xanh Royal Blue */
+    --color-dark: #1F1F1F;
+    --color-text: #f8f9fa;
+    --color-bright-nav: #FFFFFF; /* Màu nền Menu Tươi Sáng */
+    --color-nav-text-dark: #191970; /* Màu chữ Menu Tối (Xanh đậm) */
+}
+
+/* --- Color Scheme (Purple-Blue - "Tím Xanh") --- */
+.custom-bg-header {
+    background-color: #4B0082; /* Indigo/Deep Purple */
+    border-bottom: 2px solid var(--color-primary);
+}
+
+/* Navigation Bar MÀU TƯƠI SÁNG */
+.custom-bg-nav-bright {
+    background-color: var(--color-bright-nav) !important; /* Nền trắng/sáng */
+    border-bottom: 4px solid var(--color-secondary); /* Viền xanh nổi bật */
+}
+
+/* ... (Giữ nguyên các Custom Card, Text color cho Main Content) ... */
+
+/* Logo Banner Header */
+.header-logo-container {
+    max-width: 400px;
+    height: auto;
+}
+.header-logo {
+    border-radius: 10px;
+    /* Optional: Áp dụng filter nếu ảnh cần hòa hợp hơn với nền tím */
+    /* filter: drop-shadow(0 0 10px rgba(0,0,0,0.5)); */
+}
+
+/* Navigation Bar Tối (Dùng cho Footer) */
+.custom-bg-nav {
+    background-color: #000000;
+}
+.custom-bg-card {
+    background-color: #FFFFFF;
+    border-radius: 15px;
+    border: 1px solid var(--color-secondary);
+}
+
+.custom-bg-card-dark {
+    background-color: #6A5ACD; /* Slate Blue */
+    border-radius: 15px;
+}
+
+.custom-text-title {
+    color: #4B0082; /* Deep Purple */
+    font-weight: 700;
+}
+
+.custom-text-icon {
+    color: #00008B; /* Navy Blue */
+}
+
+.custom-border-quote {
+    border-color: #00008B !important;
+}
+
+.custom-list-item-bg {
+    background-color: transparent !important;
+}
+
+/* Prize Boxes */
+.prize-box {
+    transition: all 0.3s ease-in-out;
+    background: linear-gradient(135deg, #4B0082, #00008B); /* Gradient */
+    border: 3px solid #FFD700;
+}
+
+.bg-gold {
+    background: linear-gradient(135deg, #FFD700, #DAA520);
+    color: #000;
+    border: none;
+}
+.bg-silver {
+    background: linear-gradient(135deg, #C0C0C0, #A9A9A9);
+    color: #000;
+    border: none;
+}
+.bg-bronze {
+    background: linear-gradient(135deg, #CD7F32, #B8860B);
+    color: #000;
+    border: none;
+}
+.text-brown {
+    color: #B8860B !important;
+}
+
+/* --- Layout & Utility --- */
+.logo-sm {
+    width: 60px;
+    height: auto;
+}
+
+.competition-title {
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+}
+
+@media (max-width: 768px) {
+    .competition-title {
+        font-size: 1.8rem;
+    }
+}
+
+/* --- Animations (Simple Hover & Keyframe) --- */
+/* Basic transition for hover effects */
+.hover-scale {
+    transition: transform 0.3s ease;
+}
+.hover-scale:hover {
+    transform: scale(1.05);
+}
+
+/* Timeline/Prize Box Hover Effect */
+.timeline-card:hover, .prize-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2) !important;
+    border: 1px solid #00008B;
+}
+
+/* Custom Animation Classes (Placeholder - use with a library like Animate.css for "cực đẹp") */
+/* To get "cực đẹp" animations, include a library like Animate.css (e.g., <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>) and add classes like `animate__fadeIn` to your HTML elements. */
+
+/* Example of a custom keyframe animation */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.animate__pulse {
+    animation: pulse 2s infinite ease-in-out;
+}
+
+.hover-underline:hover {
+    text-decoration: underline !important;
+}
+
+.timeline-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.timeline-item {
+    padding: 10px 0;
+    border-left: 3px solid #4B0082;
+    padding-left: 15px;
+    position: relative;
+    transition: background-color 0.3s;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -8px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 15px;
+    height: 15px;
+    background-color: #00008B;
+    border-radius: 50%;
+    border: 3px solid #FFFFFF;
+}
+/* --- Tinh chỉnh Navigation Bar & Hiệu ứng Rê chuột --- */
+
+/* Tăng kích thước font cho Navigation */
+.navbar-nav .nav-link {
+    font-size: 1.05rem;
+    font-weight: 700; /* Dùng font đậm hơn */
+    padding-top: 0.7rem !important;
+    padding-bottom: 0.7rem !important;
+}
+
+/* Hiệu ứng rê chuột Tím Neon cho các mục Nav */
+.nav-item-effect {
+    position: relative;
+    color: var(--color-nav-text-dark) !important; /* Chữ màu tối trên nền sáng */
+    transition: all 0.3s ease-in-out;
+    border-radius: 5px;
+}
+
+.nav-item-effect:hover {
+    color: var(--color-primary) !important; /* Đổi màu chữ sang Tím Neon khi hover */
+    /* Hiệu ứng nổi bật (background mờ) */
+    background-color: rgba(157, 78, 221, 0.1);
+    box-shadow: 0 0 10px rgba(157, 78, 221, 0.4); 
+    transform: translateY(-2px); /* Nhấc nhẹ lên */
+}
+
+/* Hiệu ứng gạch chân dưới Tím Neon */
+.nav-item-effect::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background-color: var(--color-primary);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-item-effect:hover::after {
+    width: 80%; /* Hiện gạch chân khi hover */
+}
+
+/* Điều chỉnh lại nút Đăng ký nổi bật hơn */
+.nav-item .btn-warning {
+    color: #121212 !important;
+    background-color: #FFD700 !important;
+    border: none;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+    transition: all 0.3s ease;
+}
+
+.nav-item .btn-warning:hover {
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+    transform: scale(1.05);
+}
+
+.navbar-toggler{
+    background: #4a0080;
+}
